@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="_template.xhtml"
+>
+
+    <ui:param name="bean" value="#{estadoBean}" />
+    <ui:param name="entidade" value="#{estadoBean.entidade}" />
+    <ui:param name="pesquisa" value="#{estadoBean.pesquisa}" />
+
+</ui:composition>

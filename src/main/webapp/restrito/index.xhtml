@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                template="_template.xhtml"
+>
+
+    <ui:param name="bean" value="#{estadoBean}"/>
+    <ui:param name="entidade" value="#{estadoBean.entidade}"/>
+    <ui:param name="pesquisa" value="#{estadoBean.pesquisa}"/>
+    <ui:param name="tituloCadastro" value="CRUD 1"/>
+
+    <ui:define name="conteudoLinhaLista">
+        <div class="container">
+            <div class="mad-list-text border-bottom col" style="width: 100%">
+                <p>
+                    <b>#{i.nome} - #{i.sigla}</b><br/>
+                </p>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="areaCamposCadastro">
+        <div class="row">
+            <div class="col">
+                <h:panelGrid>
+                    <h:outputText value="Nome:"/>
+                    <p:inputText value="#{estadoBean.entidade.nome}" required="true" requiredMessage="É necessário informar o nome"/>
+                </h:panelGrid>
+            </div>
+            <div class="col">
+                <h:panelGrid>
+                    <h:outputText value="Sigla:"/>
+                    <p:inputText value="#{estadoBean.entidade.sigla}" maxlength="2" required="true" requiredMessage="É necessário informar a sigla"/>
+                </h:panelGrid>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

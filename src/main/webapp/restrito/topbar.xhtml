@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+>
+
+    <h:outputStylesheet library="css" name="top-menu.css"/>
+
+    <div id="overlay-app"></div>
+    <div class="header--app">
+        <a href="index.xhtml">Nome da Aplicação</a>
+        <p:commandLink id="imageBtnMobile" title="Opções do Usuário" style="float: right; padding: 0 10px 0 0;">
+            <p:graphicImage styleClass="img-circle" library="images" style="padding-right: 10px"
+                            name="user.png" width="32"
+                            height="32"/>
+        </p:commandLink>
+        <p:overlayPanel id="imagePanelMobile" for="imageBtnMobile" style="width: 120px"
+        >
+            <h:form style="font-size:1em;text-align:left"
+                    styleClass="menu-usuario">
+                <i class="fa fa-user"></i>
+                <p:commandLink process="@this" value="Perfil" action="#{router.redirecionarRestritoInicio()}"/>
+                <br/>
+
+                <i class="fa fa-sign-out"></i>
+                <p:commandLink styleClass="primary-text" process="@this" value="Sair" action="#{loginBean.logout}"/>
+            </h:form>
+
+        </p:overlayPanel>
+    </div>
+    <div class="top-menu--app"></div>
+    <nav>
+        <div class="nav-fostrap">
+            <h:form>
+                <ul>
+                    <!--<li ><a href="">Boletos</a></li>-->
+                    <li class="only-on-mobile"><a href="perfil.xhtml">Perfil</a></li>
+                    <li><a class="#{restritoBean.crud1ScreenActive() ? 'nav-item-active': ''}"
+                           href="index.xhtml">CRUD 1</a></li>
+                    <li><a class="#{restritoBean.crud2ScreenActive() ? 'nav-item-active': ''}"
+                           href="crud2.xhtml">CRUD 2</a></li>
+                    <li><a class="#{restritoBean.crud3ScreenActive() ? 'nav-item-active': ''}"
+                           href="crud3.xhtml">CRUD 3</a></li>
+                    <li ><a class="#{restritoBean.crud4ScreenActive() ? 'nav-item-active': ''}"
+                            href="crud4.xhtml">CRUD 4</a></li>
+                    <li class="only-on-mobile"><p:commandLink process="@this" value="Sair" action="#{loginBean.logout}"/>
+                    </li>
+                </ul>
+            </h:form>
+
+        </div>
+        <div class="nav-bg-fostrap blue-background-gradient">
+            <div class="navbar-fostrap"><span></span> <span></span> <span></span></div>
+            <a href="" class="title-mobile">Nome da Aplicação</a>
+        </div>
+    </nav>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('.navbar-fostrap').click(function () {
+                $('.nav-fostrap').toggleClass('visible');
+                $('#overlay-app').toggleClass('visible');
+                $('body').toggleClass('cover-bg');
+            });
+        });
+    </script>
+</ui:composition>

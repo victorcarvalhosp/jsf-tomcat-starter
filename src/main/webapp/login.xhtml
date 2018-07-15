@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png" />
+    <meta name="description" content="Título site." />
+    <h:outputStylesheet library="css" name="login.css"/>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous" />
+
+
+    <title>Título Site</title>
+
+</h:head>
+
+
+<h:body>
+    <h:form >
+        <p:growl />
+        <div class="card login-panel" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Realizar Login</h5>
+                <div>
+                    <fieldset class="form-group">
+                        <label for="exampleInputEmail1" class="bmd-label-floating">E-mail</label>
+                        <input jsf:value="#{loginBean.email}" type="email" class="form-control" id="exampleInputEmail1" > </input>
+                        <span class="bmd-help">We'll never share your email with anyone else.</span>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="password" class="bmd-label-floating">Senha</label>
+                        <input jsf:value="#{loginBean.senha}" type="password" class="form-control" id="password" > </input>
+                        <span class="bmd-help">We'll never share your email with anyone else.</span>
+                    </fieldset>
+
+
+                    <p:commandButton process="@form" style="width: 100%" styleClass="btn btn-primary active" value="Entrar" actionListener="#{loginBean.doLogin()}" update="@form" />
+                </div>
+            </div>
+        </div>
+
+
+    </h:form>
+
+
+
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+</h:body>
+</html>

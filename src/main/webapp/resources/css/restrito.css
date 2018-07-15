@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,600,600italic,700,700italic);
+body{
+    margin: 0;
+    font-family: 'Roboto';
+    background: #EFF3F6;
+}
+
+.ui-commandlink {
+    color: #27AAE1 !important;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.subtitulo-listas{
+    color: #757575;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+/**
+ * Helpers
+ */
+.border-tlr-radius {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 2px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+    box-shadow:
+            0 1px 3px rgba(0,0,0, 0.12),
+            0 1px 2px rgba(0,0,0, 0.24);
+}
+
+/*
+Material Design - Lists
+*/
+
+ul.mad-list{
+    display: table;
+    width: 100%;
+    padding: 0; /* 8 padding T/B */
+    margin: 0;
+    list-style: none;
+}
+ul.mad-list .ui-commandlink{
+    text-decoration: none;
+    color: #000 !important;
+    font-family: 'Roboto';
+    margin: 0px;
+}
+ul.mad-list .ui-commandlink span {
+    color: gray !important;
+    font-size: 14px;
+}
+
+ul.mad-list li{
+    display: table-row;
+    height: 48px; /* that's actually min-height for rows */
+    cursor: pointer;
+}
+ul.mad-list li > *{
+    /* Align always to middle */
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+ul.mad-list li > *:first-child{
+    /* Whoever is the first child it needs 16px left space */
+    padding-left: 16px;
+    /*background: rgba(0,255,0,0.05);*/
+}
+ul.mad-list li > *:last-child{
+    /* Whoever is the last child it needs 16 right space */
+    padding-right: 16px;
+}
+ul.mad-list .mad-list-icon{
+    /* Always left-align! Don't center icons */
+    width: 72px; /* 72-16 but we already use box-sizing */
+}
+ul.mad-list .mad-list-text{
+    /*background: rgba(0,0,255,0.05);*/
+}
+
+ul.mad-list .mad-list-icon-secundary{
+    /* Secundary actions will have already 16 right padding
+    since it's :last-child but it needs also a left 16*/
+    padding-left: 16px;
+    width: 1px; /* Always h-center align content */
+    text-align: center; /* Just to make sure if we use combinations of larger icons */
+    background: rgba(255,0,255,0.05)
+}
+
+/*
+Special classes
+*/
+.border-bottom{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
