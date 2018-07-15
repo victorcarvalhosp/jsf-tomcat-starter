@@ -4,7 +4,6 @@ import br.com.libercode.core.bo.UsuarioBO;
 import br.com.libercode.core.entity.UsuarioEntity;
 import br.com.libercode.view.bean.cdi.AbstractCDIBean;
 import br.com.libercode.view.navigation.Router;
-import org.commonjava.web.JSFUtils;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -61,10 +60,7 @@ public class LoginBean extends AbstractCDIBean {
 				.setAttribute("usuarioLogado", null);
 		((HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest()).getSession()
 				.setAttribute("condominioCarregado", null);
-		HttpSession session = JSFUtils.getSession(false);
-		if (session != null)
-			session.invalidate();
-
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 		postConstruct();
 	}
 

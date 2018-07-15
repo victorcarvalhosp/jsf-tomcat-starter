@@ -1,9 +1,8 @@
 package br.com.libercode.core.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import br.com.libercode.core.enumerated.Perfil;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -18,8 +17,9 @@ public class UsuarioEntity extends BaseEntity implements Serializable {
 	@Column(nullable = false)
 	private String senha;
 
-	@ManyToOne
-	private GrupoEntity grupo;
+	@Column
+	@Enumerated(EnumType.STRING)
+	private Perfil perfil;
 
 	public UsuarioEntity() {
 		this.ativo = true;
@@ -42,13 +42,12 @@ public class UsuarioEntity extends BaseEntity implements Serializable {
 		this.senha = senha;
 	}
 
-	public GrupoEntity getGrupo() {
-		return grupo;
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	public void setGrupo(GrupoEntity grupo) {
-		this.grupo = grupo;
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
-
 }
 

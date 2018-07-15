@@ -157,7 +157,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.deltaspike.modules:deltaspike-scheduler-module-impl:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:1.5.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:1.5.1" level="project" />
-    <orderEntry type="library" name="Maven: org.commonjava:common-java:1" level="project" />
+    <orderEntry type="library" name="Maven: org.commonjava:commonjava:1" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.4" level="project" />
   </component>
