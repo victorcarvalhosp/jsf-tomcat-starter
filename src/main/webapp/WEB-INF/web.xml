@@ -9,10 +9,6 @@
     <param-value>bootstrap</param-value>
   </context-param>
   <context-param>
-    <param-name>javax.faces.FULL_STATE_SAVING_VIEW_IDS</param-name>
-    <param-value>/restrito/inbit/widgets/dashboard.xhtml</param-value>
-  </context-param>
-  <context-param>
     <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
     <param-value>true</param-value>
   </context-param>
